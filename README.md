@@ -35,38 +35,42 @@ limitations under the License.
 
 > Return the index of the first row in an input matrix which contains at least one truthy element.
 
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
 
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- Package usage documentation. -->
+
+<section class="installation">
+
+## Installation
+
+```bash
+npm install @stdlib/blas-ext-base-gindex-of-truthy-row
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
-To use in Observable,
-
 ```javascript
-gindexOfTruthyRow = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gindex-of-truthy-row@umd/browser.js' )
-```
-
-To vendor stdlib functionality and avoid installing dependency trees for Node.js, you can use the UMD server build:
-
-```javascript
-var gindexOfTruthyRow = require( 'path/to/vendor/umd/blas-ext-base-gindex-of-truthy-row/index.js' )
-```
-
-To include the bundle in a webpage,
-
-```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gindex-of-truthy-row@umd/browser.js"></script>
-```
-
-If no recognized module system is present, access bundle contents via the global scope:
-
-```html
-<script type="text/javascript">
-(function () {
-    window.gindexOfTruthyRow;
-})();
-</script>
+var gindexOfTruthyRow = require( '@stdlib/blas-ext-base-gindex-of-truthy-row' );
 ```
 
 #### gindexOfTruthyRow( order, M, N, A, LDA )
@@ -96,7 +100,7 @@ The function has the following parameters:
 -   **M**: number of rows in `A`.
 -   **N**: number of columns in `A`.
 -   **A**: input matrix as a linear array.
--   **LDA**: stride of the first dimension of `A` (a.k.a., leading dimension of the matrix `A`).
+-   **LDA**: stride length for the first dimension of `A` (a.k.a., leading dimension of the matrix `A`).
 
 If the function is unable to find a row with at least one truthy element, the function returns `-1`.
 
@@ -177,16 +181,21 @@ var out = gindexOfTruthyRow.ndarray( 4, 4, A, 4, 1, 1 );
 
 <!-- /.usage -->
 
+<!-- Package usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
 <section class="notes">
 
 ## Notes
 
+-   If `M <= 0` or `N <= 0`, both functions return `-1`.
 -   A row is considered to contain at least one truthy element when at least one element in the row is not equal to `0.0` and is not `NaN`.
 -   Both functions support array-like objects having getter and setter accessors for array element access (e.g., [`@stdlib/array-base/accessor`][@stdlib/array/base/accessor]).
 
 </section>
 
 <!-- /.notes -->
+
+<!-- Package usage examples. -->
 
 <section class="examples">
 
@@ -196,15 +205,10 @@ var out = gindexOfTruthyRow.ndarray( 4, 4, A, 4, 1, 1 );
 
 <!-- eslint no-undef: "error" -->
 
-```html
-<!DOCTYPE html>
-<html lang="en">
-<body>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-to-array@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-shape2strides@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/blas-ext-base-gindex-of-truthy-row@umd/browser.js"></script>
-<script type="text/javascript">
-(function () {
+```javascript
+var ndarray2array = require( '@stdlib/ndarray-base-to-array' );
+var shape2strides = require( '@stdlib/ndarray-base-shape2strides' );
+var gindexOfTruthyRow = require( '@stdlib/blas-ext-base-gindex-of-truthy-row' );
 
 var shape = [ 4, 2 ];
 var order = 'row-major';
@@ -215,16 +219,19 @@ console.log( ndarray2array( A, shape, strides, 0, order ) );
 
 var out = gindexOfTruthyRow( order, shape[ 0 ], shape[ 1 ], A, strides[ 0 ] );
 console.log( out );
-
-})();
-</script>
-</body>
-</html>
 ```
 
 </section>
 
 <!-- /.examples -->
+
+<!-- Section to include cited references. If references are included, add a horizontal rule *before* the section. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="references">
+
+</section>
+
+<!-- /.references -->
 
 <!-- Section for related `stdlib` packages. Do not manually edit this section, as it is automatically populated. -->
 
@@ -308,7 +315,7 @@ Copyright &copy; 2016-2026. The Stdlib [Authors][stdlib-authors].
 
 [mdn-typed-array]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypedArray
 
-[@stdlib/array/base/accessor]: https://github.com/stdlib-js/array-base-accessor/tree/umd
+[@stdlib/array/base/accessor]: https://github.com/stdlib-js/array-base-accessor
 
 </section>
 
