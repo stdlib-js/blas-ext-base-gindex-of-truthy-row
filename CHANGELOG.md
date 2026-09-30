@@ -4,7 +4,7 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2026-09-15)
+## Unreleased (2026-09-30)
 
 <section class="features">
 
@@ -22,6 +22,7 @@
 
 <details>
 
+-   [`67c1633`](https://github.com/stdlib-js/stdlib/commit/67c1633c999488e1807bb2aa77183662c6eb387b) - **chore:** fix inconsistencies across packages in `blas/ext/base*` [(#15146)](https://github.com/stdlib-js/stdlib/pull/15146) _(by Muhammad Haris, Athan Reines)_
 -   [`fceef60`](https://github.com/stdlib-js/stdlib/commit/fceef60d33db3599b316bc0a62f0b5098d9c7a0a) - **refactor:** add support for enums in `blas/ext/base/index-of-*-row` [(#15203)](https://github.com/stdlib-js/stdlib/pull/15203) _(by Kaustubh Patange)_
 -   [`981dfaf`](https://github.com/stdlib-js/stdlib/commit/981dfaf03d963d4a69525af6d70e899a5da1ee89) - **feat:** add `blas/ext/base/gindex-of-truthy-row` [(#13207)](https://github.com/stdlib-js/stdlib/pull/13207) _(by Muhammad Haris, Athan Reines)_
 
